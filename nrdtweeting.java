@@ -47,11 +47,12 @@ public class nrdtweeting{
     //menu
     System.out.println(" 1. Update Status");
     System.out.println(" 2. Send DM");
-    System.out.println(" 3. Exit");
+    System.out.println(" 3. Timeline");
+    System.out.println(" 4. Exit");
     System.out.print(" Enter your choice: ");
     menu = input.nextInt();
     
-    while(menu != 3){
+    while(menu != 4){
       switch(menu){
         case 1:
           try{
@@ -83,11 +84,24 @@ public class nrdtweeting{
           }catch(IOException e){
             System.out.println(e);
           }
+          break;
+        case 3:
+          try{
+            System.out.println("");
+            List<Status> statuses = twit.getHomeTimeline();
+            System.out.println("Timeline\n");
+            for(Status stats : statuses){
+              System.out.println(stats.getUser().getName() + ": " + stats.getText() + "\n");
+            }
+          }catch(TwitterException e){
+            System.out.println(e);
+          }
       }
       System.out.println("");
       System.out.println(" 1. Update Status");
       System.out.println(" 2. Send DM");
-      System.out.println(" 3. Exit");
+      System.out.println(" 3. Timeline");
+      System.out.println(" 4. Exit");
       System.out.print(" Enter your choice: ");
       menu = input.nextInt();
     }
@@ -96,4 +110,3 @@ public class nrdtweeting{
     System.out.println("nordskriving.wordpress.com");
   }
 }
-          
