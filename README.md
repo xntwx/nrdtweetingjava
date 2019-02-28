@@ -1,3 +1,5 @@
+[![StyleCI](https://github.styleci.io/repos/18316524/shield?branch=master)](https://github.styleci.io/repos/18316524)
+
 nrdtweetingjava
 ===============
 
